@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     sliceIdx.forEach((item) => {
       const boxSlice = boxes
-        .filter((box, i) => (item.includes(i) ? box : null))
+        .filter((box) => item.includes(box.id) && box)
         .map(({ val }) => val)
 
       const uniqueSymbols = [...new Set(boxSlice)]

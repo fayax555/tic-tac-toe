@@ -6,13 +6,9 @@ const Box = ({ turn, setTurn, id, val, setBoxes, isWinIdx }) => {
 
     setTurn(turn === 'X' ? 'O' : 'X')
 
-    setBoxes((boxes) => {
-      const updatedBoxList = boxes.map((box) =>
-        box.id === id ? { ...box, val: turn } : box
-      )
-
-      return updatedBoxList
-    })
+    setBoxes((boxes) =>
+      boxes.map((box) => (box.id === id ? { ...box, val: turn } : box))
+    )
   }
 
   return (
