@@ -17,7 +17,7 @@ export const BoxWrapper = styled.div`
   border: 2px solid #000;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  pointer-events: ${({ isWon }) => (isWon ? 'none' : 'auto')};
+  pointer-events: ${({ isWin }) => (isWin ? 'none' : 'auto')};
 `
 
 // Box.js styles

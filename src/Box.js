@@ -5,7 +5,6 @@ const Box = ({ turn, setTurn, id, val, setBoxes, isWinIdx }) => {
     if (val) return
 
     setTurn(turn === 'X' ? 'O' : 'X')
-
     setBoxes((boxes) =>
       boxes.map((box) => (box.id === id ? { ...box, val: turn } : box))
     )
