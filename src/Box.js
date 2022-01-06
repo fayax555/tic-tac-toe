@@ -1,17 +1,6 @@
-// import { useState } from 'react'
-import styled from 'styled-components'
+import { StyledBox } from './style'
 
-const StyledBox = styled.div`
-  height: 65px;
-  width: 80px;
-  border: 2px solid black;
-  display: grid;
-  place-items: center;
-  font-size: 30px;
-  cursor: pointer;
-`
-
-const Box = ({ turn, setTurn, id, val, setBoxes }) => {
+const Box = ({ turn, setTurn, id, val, setBoxes, isWinIdx }) => {
   const handleValue = () => {
     if (val) return
 
@@ -26,7 +15,11 @@ const Box = ({ turn, setTurn, id, val, setBoxes }) => {
     })
   }
 
-  return <StyledBox onClick={handleValue}>{val}</StyledBox>
+  return (
+    <StyledBox isWinIdx={isWinIdx} onClick={handleValue}>
+      {val}
+    </StyledBox>
+  )
 }
 
 export default Box
